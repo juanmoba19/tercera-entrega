@@ -1,21 +1,4 @@
 const hbs = require('hbs');
-let {crearCurso, mostrarCursos, mostrarCursosEst} = require('../funciones');
-
-hbs.registerHelper('guardarCurso', (id, nombre, descripcion, valor, modalidad, intensidad) => {
-    if (id && nombre) {
-        return crearCurso({
-            id: id,
-            nombre: nombre,
-            descripcion: descripcion,
-            valor: valor,
-            modalidad: modalidad,
-            intensidad: intensidad,
-            estado: 'Disponible'
-        });
-    } else {
-        return mostrarCursos();
-    }
-});
 
 hbs.registerHelper('verCursoInteresado', (listaCursos) => {
     let texto = '<div class="accordion" id="accordionExample">';
